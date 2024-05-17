@@ -1,0 +1,78 @@
+.grid {
+    display: grid;
+    width: 92vw;
+
+    /*     grid-template-areas:
+    "a b c"
+    "zindex d"
+    " e "
+This causes issues I'm unsure why; */
+
+grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-content: center;
+    row-gap: 1vh;
+    column-gap: 2%;
+}
+
+.grid > div {
+    width: 30vw;
+    height: 30vh;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.grid > div:nth-child(even) {
+    background-color: yellow;
+}
+
+.grid > div:nth-child(odd) {
+    background-color: skyblue;
+}
+
+.zindex{
+    background-color:red;
+    z-index:2;
+}
+
+.art {
+    width: 92vw;
+    height: 800px;
+    margin-left:auto;
+    margin-right:auto;
+    grid-column:span 4;
+}
+
+form {
+    margin-left:auto;
+    margin-right:auto;
+    grid-column:span 5;
+}
+
+p{
+    text-align:center;
+}
+
+/* .grid > #a{
+    grid-area: a;
+}
+
+.grid > #b{
+    grid-area: b;
+}
+
+.grid > #c{
+    grid-area: c;
+}
+
+.grid > #d{
+    grid-area: d;
+}
+
+.grid > #e{
+    grid-area: e;
+} */
+
+/* Not certain why grid-areas blows my layout up. It's getting late and work is coming up soon.  */
+/*                           _   _                     */
+/*                            \O/                     */
