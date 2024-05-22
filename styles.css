@@ -1,59 +1,42 @@
+body{
+    position:absolute;
+}
+
 .grid {
+    position:absolute;
     display: grid;
-    width: 92vw;
-
-    /*     grid-template-areas:
+    width: 100vw;
+    height: 100vh;
+    row-gap:1vh;
+    grid-template-areas:
     "a b c"
-    "zindex d"
-    " e "
-This causes issues I'm unsure why; */
-
-grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    align-content: center;
-    row-gap: 1vh;
-    column-gap: 2%;
+    "d d d"
+    "d d d"
+    "e e e";
 }
 
 .grid > div {
     width: 30vw;
     height: 30vh;
-    margin-left:auto;
-    margin-right:auto;
-}
+    }
 
-.grid > div:nth-child(even) {
+.grid > div:nth-child(2) {
     background-color: yellow;
+    justify-self:center;
+    align-self:center;
+    box-sizing: border-box;
+    height:100%;
 }
 
 .grid > div:nth-child(odd) {
     background-color: skyblue;
+    justify-self:center;
+    align-self:center;
+    box-sizing: border-box;
+    height:100%;
 }
 
-.zindex{
-    background-color:red;
-    z-index:2;
-}
-
-.art {
-    width: 92vw;
-    height: 800px;
-    margin-left:auto;
-    margin-right:auto;
-    grid-column:span 4;
-}
-
-form {
-    margin-left:auto;
-    margin-right:auto;
-    grid-column:span 5;
-}
-
-p{
-    text-align:center;
-}
-
-/* .grid > #a{
+.grid > #a{
     grid-area: a;
 }
 
@@ -66,13 +49,35 @@ p{
 }
 
 .grid > #d{
+    z-index:0;
+    grid-row:span 3;
+    grid-column:span 4;
+    background-image:url(art.jpg);
+    background-size:contain;
+    background-repeat:no-repeat;
+    height:100%;
+    width:100%;
     grid-area: d;
 }
 
 .grid > #e{
     grid-area: e;
-} */
+}
 
-/* Not certain why grid-areas blows my layout up. It's getting late and work is coming up soon.  */
-/*                           _   _                     */
-/*                            \O/                     */
+.zindex{
+    grid-area:d;
+    background-color:red;
+    z-index:2;
+    width: 30vw;
+    height: 30vh;
+    justify-self:right;
+    align-self:center;
+}
+
+form {
+    justify-self:center;
+}
+
+p{
+    text-align:center;
+}
